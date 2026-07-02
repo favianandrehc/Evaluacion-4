@@ -5,7 +5,100 @@ ACTIVIDAD 1
 
 ACTIVIDAD 2
 
-o
+1. Vector de tiempos propuesto
+
+Se considera el siguiente conjunto de tiempos estimados de desplazamiento entre diferentes puntos del campus (en minutos):
+
+[12, 5, 18, 7, 3, 15, 10, 8]
+
+2. Algoritmo recursivo utilizado
+
+Para ordenar los tiempos de menor a mayor se utilizará el algoritmo recursivo Merge Sort, el cual divide el problema en partes más pequeñas, las ordena y luego combina los resultados.
+
+def merge_sort(lista):
+    if len(lista) <= 1:
+        return lista
+
+    medio = len(lista) // 2
+    izquierda = merge_sort(lista[:medio])
+    derecha = merge_sort(lista[medio:])
+
+    return fusionar(izquierda, derecha)
+
+def fusionar(izq, der):
+    resultado = []
+    i = j = 0
+
+    while i < len(izq) and j < len(der):
+        if izq[i] < der[j]:
+            resultado.append(izq[i])
+            i += 1
+        else:
+            resultado.append(der[j])
+            j += 1
+
+    resultado.extend(izq[i:])
+    resultado.extend(der[j:])
+
+    return resultado
+3. Desarrollo paso a paso
+División del problema
+
+Vector original:
+
+[12, 5, 18, 7, 3, 15, 10, 8]
+
+Primera división:
+
+[12, 5, 18, 7] [3, 15, 10, 8]
+
+Segunda división:
+
+[12, 5] [18, 7] [3, 15] [10, 8]
+
+Tercera división:
+
+[12] [5] [18] [7] [3] [15] [10] [8]
+
+En este punto cada sublista contiene un solo elemento, por lo que ya se consideran ordenadas.
+
+Combinación de resultados parciales
+
+Se combinan las sublistas comparando sus elementos:
+
+[12] + [5] → [5, 12]
+
+[18] + [7] → [7, 18]
+
+[3] + [15] → [3, 15]
+
+[10] + [8] → [8, 10]
+
+Luego:
+
+[5, 12] + [7, 18] → [5, 7, 12, 18]
+
+[3, 15] + [8, 10] → [3, 8, 10, 15]
+
+Finalmente:
+
+[5, 7, 12, 18] + [3, 8, 10, 15]
+
+→ [3, 5, 7, 8, 10, 12, 15, 18]
+
+4. Resultado final
+
+El vector ordenado de menor a mayor es:
+
+[3, 5, 7, 8, 10, 12, 15, 18]
+
+5. Justificación de la estrategia recursiva
+
+La estrategia recursiva es válida porque el problema principal de ordenar una lista puede dividirse en problemas más pequeños del mismo tipo. Cada sublista se ordena de forma independiente y posteriormente se combinan los resultados para obtener la lista completamente ordenada. La recursión termina cuando se alcanza el caso base, es decir, cuando la lista tiene uno o ningún elemento.
+
+6. Análisis de eficiencia
+
+El algoritmo Merge Sort tiene una complejidad temporal de O(n log n), lo que significa que su rendimiento es eficiente incluso cuando aumenta la cantidad de datos a ordenar. Su complejidad espacial es O(n), debido al uso de listas auxiliares durante el proceso de combinación. Por estas características, es una opción adecuada para ordenar tiempos de desplazamiento dentro de un campus universitario.
 
 
 ACTIVIDAD 3
