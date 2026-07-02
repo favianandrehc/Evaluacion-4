@@ -1,10 +1,10 @@
 # Evaluacion-4
 
 Integrantes del grupo:
--Favian Andre Hurtado Carlos.
--Alvaro Daniel Pino Chavez.
--Sandro Ronaldo Callañaupa Portal.
--nombre y apellidos
+-Favian Andre Hurtado Carlos (100%).
+-Alvaro Daniel Pino Chavez (100%).
+-Sandro Ronaldo Callañaupa Portal (100%).
+
 
 ACTIVIDAD 1
 
