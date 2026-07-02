@@ -1,4 +1,12 @@
 # Evaluacion-4
+
+Integrantes del grupo:
+-Favian Andre Hurtado Carlos.
+-Alvaro Daniel Pino Chavez.
+-Sandro Ronaldo Callañaupa Portal.
+-
+
+
 ACTIVIDAD 1
 
 1. ¿Qué caracteriza a un algoritmo recursivo y cómo se relaciona con el principio Divide y Vencerás?
