@@ -15,17 +15,7 @@ Supongamos que un estudiante debe revisar 6 puntos de control del campus.
 
 Cada punto representa un paso.
 
-Pseudocódigo
-Función ContarPasos(n)
 
-    Si n == 0 Entonces
-        Retornar 0
-    FinSi
-
-    Retornar 1 + ContarPasos(n - 1)
-
-FinFunción
-Versión en Python
 def contar_pasos(n):
     if n == 0:      # Caso base
         return 0
