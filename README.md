@@ -1,7 +1,131 @@
 # Evaluacion-4
 ACTIVIDAD 1
 
+1. ¿Qué caracteriza a un algoritmo recursivo y cómo se relaciona con el principio Divide y Vencerás?
 
+Un algoritmo recursivo es aquel que resuelve un problema llamándose a sí mismo una o varias veces, trabajando sobre una versión más pequeña del mismo problema hasta llegar a una condición que ya no necesita seguir llamándose caso base.
+
+La recursividad está relacionada con el principio Divide y Vencerás, porque el problema principal se divide en subproblemas más pequeños. Cada llamada recursiva resuelve una parte del problema hasta que finalmente todas las soluciones parciales se combinan para obtener el resultado final.
+
+En el caso de CampusNavigator IA, la recursividad puede utilizarse para contar automáticamente los puntos de control que un estudiante debe recorrer dentro del campus.
+
+2. Algoritmo recursivo
+
+Supongamos que un estudiante debe revisar 6 puntos de control del campus.
+
+Cada punto representa un paso.
+
+Pseudocódigo
+Función ContarPasos(n)
+
+    Si n == 0 Entonces
+        Retornar 0
+    FinSi
+
+    Retornar 1 + ContarPasos(n - 1)
+
+FinFunción
+Versión en Python
+def contar_pasos(n):
+    if n == 0:      # Caso base
+        return 0
+    return 1 + contar_pasos(n - 1)
+
+pasos = 6
+print("Total de pasos:", contar_pasos(pasos))
+
+Salida
+
+Total de pasos: 6
+3. Traza manual de ejecución
+
+Caso de prueba:
+
+ContarPasos(5)
+Llamadas
+ContarPasos(5)
+↓
+1 + ContarPasos(4)
+
+ContarPasos(4)
+↓
+1 + ContarPasos(3)
+
+ContarPasos(3)
+↓
+1 + ContarPasos(2)
+
+ContarPasos(2)
+↓
+1 + ContarPasos(1)
+
+ContarPasos(1)
+↓
+1 + ContarPasos(0)
+
+ContarPasos(0)
+↓
+Retorna 0
+Retorno de llamadas
+ContarPasos(0) = 0
+
+ContarPasos(1) = 1 + 0 = 1
+
+ContarPasos(2) = 1 + 1 = 2
+
+ContarPasos(3) = 1 + 2 = 3
+
+ContarPasos(4) = 1 + 3 = 4
+
+ContarPasos(5) = 1 + 4 = 5
+Diagrama de llamadas
+ContarPasos(5)
+      |
+ContarPasos(4)
+      |
+ContarPasos(3)
+      |
+ContarPasos(2)
+      |
+ContarPasos(1)
+      |
+ContarPasos(0)
+      |
+    Retorna 0
+      ↑
+    Retorna 1
+      ↑
+    Retorna 2
+      ↑
+    Retorna 3
+      ↑
+    Retorna 4
+      ↑
+    Retorna 5
+
+Este ejemplo presenta 6 llamadas recursivas, cumpliendo con el requisito de al menos cinco niveles de ejecución.
+
+4. Caso base, caso recursivo y criterio de finalización
+Caso base
+
+Cuando:
+
+n == 0
+
+Significa que ya no quedan puntos de control por revisar y la función retorna 0.
+
+Caso recursivo
+
+Mientras:
+
+n > 0
+
+La función cuenta un paso y vuelve a llamarse con un punto menos:
+
+1 + ContarPasos(n - 1)
+Criterio de finalización
+
+La recursividad termina cuando el número de puntos de control llega a 0. En ese momento deja de realizar nuevas llamadas y comienza a retornar los resultados hasta completar el conteo total.
 
 ACTIVIDAD 2
 
