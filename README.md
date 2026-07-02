@@ -4,6 +4,7 @@ Integrantes del grupo:
 -Favian Andre Hurtado Carlos (100%).
 -Alvaro Daniel Pino Chavez (100%).
 -Sandro Ronaldo Callañaupa Portal (100%).
+-Claudio Saldaña Isaac (100%).
 
 
 ACTIVIDAD 1
