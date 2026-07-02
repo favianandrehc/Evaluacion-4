@@ -217,15 +217,137 @@ La estrategia recursiva es válida porque el problema principal de ordenar una l
 El algoritmo Merge Sort tiene una complejidad temporal de O(n log n), lo que significa que su rendimiento es eficiente incluso cuando aumenta la cantidad de datos a ordenar. Su complejidad espacial es O(n), debido al uso de listas auxiliares durante el proceso de combinación. Por estas características, es una opción adecuada para ordenar tiempos de desplazamiento dentro de un campus universitario.
 
 
-ACTIVIDAD 3
+ACTIVIDAD 3 (Modelado del problema con grafos y búsquedas)
 
+Modelado del campus como un grafo
 
+Para representar las conexiones entre los diferentes ambientes del campus se modeló un **grafo no dirigido**, ya que los estudiantes pueden desplazarse en ambos sentidos entre los diferentes puntos.
 
+### Nodos del grafo
 
+| Nodo | Ambiente |
+|------|----------------------------|
+| A | Entrada Principal |
+| B | Biblioteca |
+| C | Aula 101 |
+| D | Laboratorio de Computación |
+| E | Cafetería |
+| F | Oficina Académica |
+| G | Estacionamiento |
 
+### Conexiones del grafo
 
+El grafo cuenta con **7 nodos** y **10 conexiones**:
 
+- A — B
+- A — C
+- B — D
+- B — E
+- C — D
+- C — F
+- D — E
+- D — G
+- E — F
+- F — G
 
+---
+
+## Representación gráfica
+
+```text
+              Biblioteca (B)
+             /              \
+            /                \
+Entrada(A)                  Cafetería(E)
+     | \                      /      \
+     |  \                    /        \
+     |   Aula(C) -------- Laboratorio(D)
+     |        \               |         \
+     |         \              |          \
+     |          Oficina(F) -------- Estacionamiento(G)
+```
+
+**Tipo de grafo:** No dirigido.
+
+---
+
+# Aplicación del algoritmo DFS (Depth First Search)
+
+**Nodo de origen:** Entrada Principal (A)
+
+### Recorrido obtenido
+
+```text
+A → B → D → G → F → E → C
+```
+
+### Explicación
+
+DFS explora un camino hasta el final antes de regresar y continuar con otro recorrido. Este algoritmo es útil cuando se desea recorrer completamente todas las conexiones del campus.
+
+---
+
+# Aplicación del algoritmo BFS (Breadth First Search)
+
+**Nodo de origen:** Entrada Principal (A)
+
+### Recorrido obtenido
+
+```text
+A → B → C → D → E → F → G
+```
+
+### Explicación
+
+BFS visita primero los nodos más cercanos al punto de partida y luego continúa con el siguiente nivel. Es ideal para encontrar el camino con menor cantidad de conexiones cuando todas tienen el mismo costo.
+
+---
+
+# Aplicación del algoritmo A*
+
+## Situación propuesta
+
+Un estudiante desea llegar desde la **Entrada Principal (A)** hasta el **Laboratorio de Computación (D)** utilizando la ruta más eficiente.
+
+Para este caso resulta adecuado utilizar el algoritmo **A***, ya que combina el costo recorrido con una estimación de la distancia restante hasta el destino.
+
+### Heurística utilizada
+
+Se utilizará como heurística la **distancia estimada** entre cada ambiente y el laboratorio.
+
+| Nodo | Distancia estimada hasta D |
+|------|----------------------------|
+| A | 3 |
+| B | 1 |
+| C | 1 |
+| D | 0 |
+| E | 1 |
+| F | 2 |
+| G | 1 |
+
+Gracias a esta estimación, A* prioriza los caminos que probablemente conduzcan más rápido al destino.
+
+---
+
+# Comparación de los algoritmos
+
+| Escenario | Algoritmo recomendado | Justificación |
+|-----------|----------------------|---------------|
+| Explorar completamente el campus | **DFS** | Recorre todas las rutas profundizando antes de retroceder. |
+| Buscar el ambiente más cercano | **BFS** | Encuentra el camino con menor número de conexiones. |
+| Recomendar la mejor ruta | **A*** | Utiliza una heurística para encontrar una ruta más eficiente explorando menos nodos. |
+
+---
+
+# Conclusión
+
+El modelado del campus mediante grafos permite representar de forma sencilla las conexiones entre aulas, laboratorios, oficinas y servicios.
+
+- **DFS** es recomendable cuando se necesita explorar completamente el campus.
+- **BFS** resulta adecuado para encontrar el camino más corto cuando todas las conexiones tienen el mismo costo.
+- **A*** es la mejor alternativa para recomendar rutas inteligentes, ya que utiliza una heurística que reduce el número de nodos explorados y encuentra rutas más eficientes.
+
+La combinación de estas técnicas permite que **CampusNavigator IA** pueda orientar a estudiantes, docentes y visitantes de manera rápida y eficiente dentro del campus universitario.
 
 
 
