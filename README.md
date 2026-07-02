@@ -10,12 +10,7 @@ La recursividad está relacionada con el principio Divide y Vencerás, porque el
 En el caso de CampusNavigator IA, la recursividad puede utilizarse para contar automáticamente los puntos de control que un estudiante debe recorrer dentro del campus.
 
 2. Algoritmo recursivo
-
-Supongamos que un estudiante debe revisar 6 puntos de control del campus.
-
-Cada punto representa un paso.
-
-
+   
 def contar_pasos(n):
     if n == 0:      # Caso base
         return 0
@@ -25,8 +20,8 @@ pasos = 6
 print("Total de pasos:", contar_pasos(pasos))
 
 Salida
-
 Total de pasos: 6
+
 3. Traza manual de ejecución
 
 Caso de prueba:
